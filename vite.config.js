@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Cypherbit-Website/',   // EXACT repo name
+  base: '/',   // IMPORTANT for custom domain
 })
