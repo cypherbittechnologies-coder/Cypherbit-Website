@@ -138,7 +138,14 @@ const Career = () => {
           </div>
         </div>
 
-        {/* Open Positions - Exact Figma Specs */}
+       {/* Open Positions - Exact Figma Specs (hidden)
+        
+            The full section below is intentionally commented out to hide
+            Open Positions on the careers page while preserving the code and
+            existing comments for future reuse.
+        
+        */}
+        {/*
         <div 
           className="flex flex-col gap-6 md:gap-7 items-center px-4 sm:px-6 md:px-8 lg:px-[40px] py-0 w-full"
           style={{ 
@@ -207,6 +214,7 @@ const Career = () => {
             Apply Now
           </Button>
         </div>
+        */}
       </div>
     </div>
   );
