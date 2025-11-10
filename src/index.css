@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #E7F0FA;
+}
+
+/* Custom styles */
+.shadow-custom {
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 25%, #e6edff 50%, #d4e0ff 75%, #7794E2 100%);
+}
+
+/* Sapphire VEIL Gradient Options */
+/* Option 1: Light to Dark Vertical Gradient */
+.sapphire-gradient-1 {
+  background: linear-gradient(180deg, #E7F0FA 0%, #7BA4D0 50%, #2E5E99 100%);
+  background-attachment: fixed;
+}
+
+/* Option 2: All Colors Diagonal Gradient */
+.sapphire-gradient-2 {
+  background: linear-gradient(135deg, #E7F0FA 0%, #7BA4D0 33%, #2E5E99 66%, #0D2440 100%);
+  background-attachment: fixed;
+}
+
+/* Option 3: Subtle Light Gradient (for content readability) */
+.sapphire-gradient-3 {
+  background: linear-gradient(180deg, #E7F0FA 0%, #7BA4D0 30%, #2E5E99 70%, #0D2440 100%);
+  background-attachment: fixed;
+}
+
+/* Professional Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-pop-in {
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Initial hidden state for scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Reset animation when visible class is removed */
+.scroll-animate:not(.visible) {
+  animation: none !important;
+}
+
+/* Transform variants for scroll animations */
+.scroll-animate.animate-slide-up {
+  transform: translateY(40px);
+}
+
+.scroll-animate.animate-slide-up.visible {
+  transform: translateY(0);
+}
+
+.scroll-animate.animate-slide-in-left {
+  transform: translateX(-40px);
+}
+
+.scroll-animate.animate-slide-in-left.visible {
+  transform: translateX(0);
+}
+
+.scroll-animate.animate-slide-in-right {
+  transform: translateX(40px);
+}
+
+.scroll-animate.animate-slide-in-right.visible {
+  transform: translateX(0);
+}
+
+.scroll-animate.animate-scale-in {
+  transform: scale(0.9);
+}
+
+.scroll-animate.animate-scale-in.visible {
+  transform: scale(1);
+}
+
+.scroll-animate.animate-pop-in {
+  transform: scale(0.3);
+  opacity: 0;
+}
+
+.scroll-animate.animate-pop-in.visible {
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.scroll-animate.animate-pop-in:not(.visible) {
+  transform: scale(0.3);
+  opacity: 0;
+  animation: none;
+}
+
+/* Ensure pop-in works with stagger delays */
+.scroll-animate.animate-pop-in.stagger-1.visible {
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s forwards;
+}
+.scroll-animate.animate-pop-in.stagger-2.visible {
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+}
+.scroll-animate.animate-pop-in.stagger-3.visible {
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+.scroll-animate.animate-pop-in.stagger-4.visible {
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { 
+  animation-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.stagger-2 { 
+  animation-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.stagger-3 { 
+  animation-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.stagger-4 { 
+  animation-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.stagger-5 { 
+  animation-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.stagger-6 { 
+  animation-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-smooth-slow {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image hover effects */
+.image-hover {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+}
+
+/* Text reveal animation */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.text-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reset text reveal when visible class is removed */
+.text-reveal:not(.visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Ensure text-reveal works with stagger delays */
+.text-reveal.stagger-1 { transition-delay: 0.1s; }
+.text-reveal.stagger-2 { transition-delay: 0.2s; }
+.text-reveal.stagger-3 { transition-delay: 0.3s; }
+.text-reveal.stagger-4 { transition-delay: 0.4s; }
+.text-reveal.stagger-5 { transition-delay: 0.5s; }
+.text-reveal.stagger-6 { transition-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .scroll-animate {
+    transition-duration: 0.5s;
+  }
+}
