@@ -704,9 +704,10 @@ const Home = () => {
               </h2>
             </div>
           </div>
+          
 
           {/* Open Positions - Colorful and Optimized */}
-          {/*
+          {/* 
           <div 
             className="flex flex-col gap-5 md:gap-6 items-center px-4 sm:px-6 md:px-8 lg:px-[40px] py-6 md:py-8 w-full"
             style={{ 
@@ -836,6 +837,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          */}
         </div>
       </section> 
 
